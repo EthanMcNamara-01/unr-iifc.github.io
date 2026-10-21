@@ -1,0 +1,10 @@
+# Full-size source photos (too large for the site)
+_originals/
+
+# Local tool settings
+.claude/
+
+# System files
+Thumbs.db
+desktop.ini
+.DS_Store
