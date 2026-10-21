@@ -375,10 +375,38 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 .doc { padding: 24px 0; border-top: 1px solid var(--rule); }
 .doc:last-child { border-bottom: 1px solid var(--rule); }
 .doc h3 { margin-bottom: 0.3em; }
-.doc h3 a { text-decoration: none; }
-.doc h3 a:hover { text-decoration: underline; }
 .doc p { margin-bottom: 0.4em; }
-.doc .meta { color: var(--silver-dark); font-size: 0.9rem; margin: 0; }
+.doc-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 14px; }
+.doc .meta { color: var(--silver-dark); font-size: 0.9rem; }
+.btn-small { padding: 8px 16px; font-size: 0.95rem; }
+.btn-outline { background: transparent; color: var(--navy); }
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+
+/* ---------- Contact ---------- */
+.contact-list { margin: 0; }
+.contact-list div { padding: 20px 0; border-top: 1px solid var(--rule); }
+.contact-list div:last-child { border-bottom: 1px solid var(--rule); }
+.contact-list dt { color: var(--silver-dark); font-size: 0.95rem; }
+.contact-list dd { margin: 2px 0 0; font-family: var(--font-greek); font-size: clamp(1.4rem, 3vw, 1.9rem); overflow-wrap: anywhere; }
+.contact-list dd a { text-decoration: none; }
+.contact-list dd a:hover { text-decoration: underline; }
+
+/* ---------- Parents ---------- */
+.lead { font-family: var(--font-greek); font-size: clamp(1.4rem, 2.6vw, 1.75rem); line-height: 1.35; color: var(--navy); }
+.subhead { margin-top: 40px; }
+.contact-card { background: var(--white); border-left: 3px solid var(--navy); padding: 20px 24px; }
+.contact-card span, .chapter-contacts span { display: block; }
+.contact-card .name { font-family: var(--font-greek); font-size: 1.6rem; color: var(--navy); line-height: 1.2; }
+.contact-card .role, .chapter-contacts .pres-name { color: var(--silver-dark); font-size: 0.95rem; }
+.contact-card .lines { margin-top: 10px; overflow-wrap: anywhere; }
+.chapter-contacts { list-style: none; margin: 0; padding: 0; }
+.chapter-contacts li { padding: 14px 0; border-top: 1px solid var(--rule); }
+.chapter-contacts li:last-child { border-bottom: 1px solid var(--rule); }
+.chapter-contacts .chapter-name { font-weight: 600; }
+.chapter-contacts .lines { font-size: 0.95rem; overflow-wrap: anywhere; }
+.btn-light { background: var(--white); border-color: var(--white); color: var(--navy); margin-bottom: 16px; }
+.btn-light:hover { background: var(--silver); border-color: var(--silver); color: var(--navy-deep); }
+.section-navy .btn-light { color: var(--navy); }
 
 /* ---------- Footer ---------- */
 .site-footer {

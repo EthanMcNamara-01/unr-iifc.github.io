@@ -12,8 +12,11 @@ window.IIFC = {
     name: "Independent Interfraternity Council",
     shortName: "IIFC",
     school: "University of Nevada, Reno",
-    email: "",       // e.g. "iifc.unr@gmail.com"
-    instagram: ""    // e.g. "https://instagram.com/unr_iifc"
+    email: "nevadaiifcpresident@gmail.com",
+    phone: "(775) 351-8852",
+    instagram: "",   // e.g. "https://instagram.com/unr_iifc"
+    // Link to an anonymous Google Form for concerns (Parents page). Leave "" to hide the button.
+    complaintFormUrl: ""
   },
 
   // One entry per chapter. "id" is used in links, so keep it short with no spaces.
@@ -26,7 +29,9 @@ window.IIFC = {
       blurb: "",       // 1–2 sentences about the UNR chapter
       instagram: "https://www.instagram.com/ato_nevada/",
       website: "https://www.ato.org",
-      photo: ""
+      photo: "",
+      // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
+      president: { name: "", email: "", phone: "" }
     },
     {
       id: "theta-chi",
@@ -36,7 +41,9 @@ window.IIFC = {
       blurb: "",
       instagram: "https://www.instagram.com/thetachinevada/",
       website: "https://www.thetachi.org",
-      photo: ""
+      photo: "",
+      // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
+      president: { name: "", email: "", phone: "" }
     },
     {
       id: "lambda-chi",
@@ -46,7 +53,9 @@ window.IIFC = {
       blurb: "",
       instagram: "https://www.instagram.com/lambdachinevada/",
       website: "https://www.lambdachi.org",
-      photo: ""
+      photo: "",
+      // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
+      president: { name: "", email: "", phone: "" }
     },
     {
       id: "kappa-alpha",
@@ -56,7 +65,9 @@ window.IIFC = {
       blurb: "",
       instagram: "https://www.instagram.com/kappaalphanevada/",
       website: "https://www.ka.org",
-      photo: ""
+      photo: "",
+      // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
+      president: { name: "", email: "", phone: "" }
     },
     {
       id: "zeta-psi",
@@ -66,7 +77,9 @@ window.IIFC = {
       blurb: "",
       instagram: "https://www.instagram.com/zetapsinevada/",
       website: "https://www.zetapsi.org",
-      photo: ""
+      photo: "",
+      // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
+      president: { name: "", email: "", phone: "" }
     },
     {
       id: "pi-kapp",
@@ -76,7 +89,9 @@ window.IIFC = {
       blurb: "",
       instagram: "https://www.instagram.com/pikappreno/",
       website: "https://www.pikapp.org",
-      photo: ""
+      photo: "",
+      // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
+      president: { name: "", email: "", phone: "" }
     }
   ],
 

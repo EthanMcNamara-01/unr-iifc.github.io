@@ -116,18 +116,59 @@
   fill("resource-list", (data.resources || []).map(function (d) {
     var meta = "PDF" + (d.pages ? ", " + d.pages + " pages" : "");
     return '<li class="doc">' +
-      '<h3><a href="' + esc(d.file) + '" target="_blank" rel="noopener">' + esc(d.title) + '</a></h3>' +
+      '<h3>' + esc(d.title) + '</h3>' +
       (d.description ? '<p>' + esc(d.description) + '</p>' : '') +
-      '<p class="meta">' + meta + '</p>' +
+      '<div class="doc-actions">' +
+        '<a class="btn btn-small" href="' + esc(d.file) + '">View ' + esc(d.title) + '</a>' +
+        '<a class="btn btn-small btn-outline" href="' + esc(d.file) + '" download>Download</a>' +
+        '<span class="meta">' + meta + '</span>' +
+      '</div>' +
       '</li>';
   }).join(""));
 
-  // Contact line in the footer
+  // Contact details: footer on every page, plus the Contact page
   var c = data.council;
+  var telHref = c.phone ? "tel:+1" + String(c.phone).replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "") : "";
   var contact = [];
   if (c.email) contact.push('<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a>');
+  if (c.phone) contact.push('<a href="' + telHref + '">' + esc(c.phone) + '</a>');
   if (c.instagram) contact.push('<a href="' + esc(c.instagram) + '">Instagram</a>');
-  fill("footer-contact", contact.join(" &nbsp;|&nbsp; "));
+  fill("footer-contact", contact.join("<br>"));
+
+  var rows = [];
+  if (c.email) rows.push('<div><dt>Email</dt><dd><a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a></dd></div>');
+  if (c.phone) rows.push('<div><dt>Phone</dt><dd><a href="' + telHref + '">' + esc(c.phone) + '</a></dd></div>');
+  if (c.instagram) rows.push('<div><dt>Instagram</dt><dd><a href="' + esc(c.instagram) + '">' + esc(igHandle(c.instagram)) + '</a></dd></div>');
+  fill("contact-list", rows.join(""));
+
+  // Parents page
+  function telLink(phone) {
+    return '<a href="tel:+1' + String(phone).replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "") + '">' + esc(phone) + '</a>';
+  }
+  var pres = data.officers.filter(function (o) { return o.role === "President"; })[0];
+  var councilLines = [];
+  if (c.email) councilLines.push('<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a>');
+  if (c.phone) councilLines.push(telLink(c.phone));
+  fill("council-contact",
+    '<span class="name">' + esc(pres && pres.name ? pres.name : "Council president") + '</span>' +
+    '<span class="role">President, Independent Interfraternity Council</span>' +
+    '<span class="lines">' + councilLines.join("<br>") + '</span>');
+
+  fill("chapter-contacts", data.chapters.map(function (ch) {
+    var p = ch.president || {};
+    var lines = [];
+    if (p.email) lines.push('<a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a>');
+    if (p.phone) lines.push(telLink(p.phone));
+    if (!lines.length && ch.instagram) lines.push('<a href="' + esc(ch.instagram) + '" target="_blank" rel="noopener">Message ' + esc(igHandle(ch.instagram)) + ' on Instagram</a>');
+    return '<li><span class="chapter-name">' + esc(ch.name) + '</span>' +
+      (p.name ? '<span class="pres-name">' + esc(p.name) + ', President</span>' : '') +
+      '<span class="lines">' + lines.join("<br>") + '</span></li>';
+  }).join(""));
+
+  var concern = [];
+  if (c.complaintFormUrl) concern.push('<a class="btn btn-light" href="' + esc(c.complaintFormUrl) + '">Submit an anonymous report</a>');
+  if (c.email) concern.push('<p>' + (c.complaintFormUrl ? 'Or email' : 'Email') + ' <a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a>' + (c.complaintFormUrl ? ' if you\'d like a response.' : '.') + '</p>');
+  fill("concern-actions", concern.join(""));
 
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
