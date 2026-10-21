@@ -24,10 +24,20 @@
       '<span class="label">' + esc(c.name) + '</span></a></li>';
   }).join(""));
 
+  var igIcon = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>' +
+    '<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>' +
+    '<circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>';
+
+  function igHandle(url) {
+    var m = String(url).match(/instagram\.com\/([^\/?#]+)/);
+    return m ? "@" + m[1] : "Instagram";
+  }
+
   // Chapters page
   fill("chapter-list", data.chapters.map(function (c) {
     var links = [];
-    if (c.instagram) links.push('<a href="' + esc(c.instagram) + '">Instagram</a>');
+    if (c.instagram) links.push('<a class="ig" href="' + esc(c.instagram) + '" target="_blank" rel="noopener" aria-label="' + esc(c.name) + ' on Instagram">' + igIcon + esc(igHandle(c.instagram)) + '</a>');
     if (c.website) links.push('<a href="' + esc(c.website) + '">National website</a>');
     return '<li class="chapter" id="' + esc(c.id) + '">' +
       '<div class="greek" aria-hidden="true">' + esc(c.letters) + '</div>' +
@@ -100,6 +110,16 @@
       '<span class="role">' + esc(o.role) + '</span>' +
       (o.email ? '<a href="mailto:' + esc(o.email) + '">' + esc(o.email) + '</a>' : '') +
       '</div></li>';
+  }).join(""));
+
+  // Resources page
+  fill("resource-list", (data.resources || []).map(function (d) {
+    var meta = "PDF" + (d.pages ? ", " + d.pages + " pages" : "");
+    return '<li class="doc">' +
+      '<h3><a href="' + esc(d.file) + '" target="_blank" rel="noopener">' + esc(d.title) + '</a></h3>' +
+      (d.description ? '<p>' + esc(d.description) + '</p>' : '') +
+      '<p class="meta">' + meta + '</p>' +
+      '</li>';
   }).join(""));
 
   // Contact line in the footer

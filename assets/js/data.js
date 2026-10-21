@@ -24,7 +24,7 @@ window.IIFC = {
       letters: "ΑΤΩ",
       founded: "Founded in 1865 in Richmond, Virginia",
       blurb: "",       // 1–2 sentences about the UNR chapter
-      instagram: "",
+      instagram: "https://www.instagram.com/ato_nevada/",
       website: "https://www.ato.org",
       photo: ""
     },
@@ -34,7 +34,7 @@ window.IIFC = {
       letters: "ΘΧ",
       founded: "Founded in 1856 at Norwich University",
       blurb: "",
-      instagram: "",
+      instagram: "https://www.instagram.com/thetachinevada/",
       website: "https://www.thetachi.org",
       photo: ""
     },
@@ -44,7 +44,7 @@ window.IIFC = {
       letters: "ΛΧΑ",
       founded: "Founded in 1909 at Boston University",
       blurb: "",
-      instagram: "",
+      instagram: "https://www.instagram.com/lambdachinevada/",
       website: "https://www.lambdachi.org",
       photo: ""
     },
@@ -54,7 +54,7 @@ window.IIFC = {
       letters: "ΚΑ",
       founded: "Founded in 1865 at Washington College",
       blurb: "",
-      instagram: "",
+      instagram: "https://www.instagram.com/kappaalphanevada/",
       website: "https://www.ka.org",
       photo: ""
     },
@@ -64,7 +64,7 @@ window.IIFC = {
       letters: "ΖΨ",
       founded: "Founded in 1847 at New York University",
       blurb: "",
-      instagram: "",
+      instagram: "https://www.instagram.com/zetapsinevada/",
       website: "https://www.zetapsi.org",
       photo: ""
     },
@@ -74,7 +74,7 @@ window.IIFC = {
       letters: "ΠΚΦ",
       founded: "Founded in 1904 at the College of Charleston",
       blurb: "",
-      instagram: "",
+      instagram: "https://www.instagram.com/pikappreno/",
       website: "https://www.pikapp.org",
       photo: ""
     }
@@ -105,6 +105,22 @@ window.IIFC = {
       { title: "Accept a bid", text: "Pick the chapter that feels like home and start the new member process." }
     ]
   },
+
+  // Documents on the Resources page. Put PDFs in assets/docs/.
+  resources: [
+    {
+      title: "Constitution",
+      description: "Our mission and purpose, who can join the council, and how the general body, executive board, and judicial committee work.",
+      file: "assets/docs/iifc-constitution.pdf",
+      pages: 10
+    },
+    {
+      title: "Bylaws",
+      description: "Officer duties, finances and dues, the code of conduct, the judicial process, and our expansion and recruitment policies.",
+      file: "assets/docs/iifc-bylaws.pdf",
+      pages: 18
+    }
+  ],
 
   // Dates use the format "YYYY-MM-DD". Past events hide automatically.
   events: [
