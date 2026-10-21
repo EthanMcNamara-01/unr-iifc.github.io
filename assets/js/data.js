@@ -64,7 +64,7 @@ window.IIFC = {
       founded: "Founded in 1865 at Washington College",
       blurb: "",
       instagram: "https://www.instagram.com/kappaalphanevada/",
-      website: "https://www.ka.org",
+      website: "https://www.kappaalphaorder.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
       president: { name: "Jacob Rivers", email: "", phone: "(775) 287-2417" }
