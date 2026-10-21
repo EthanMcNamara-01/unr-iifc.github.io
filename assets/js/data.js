@@ -31,7 +31,7 @@ window.IIFC = {
       website: "https://www.ato.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
-      president: { name: "", email: "", phone: "" }
+      president: { name: "Nick Bohlander", email: "", phone: "(702) 815-6628" }
     },
     {
       id: "theta-chi",
@@ -43,7 +43,7 @@ window.IIFC = {
       website: "https://www.thetachi.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
-      president: { name: "", email: "", phone: "" }
+      president: { name: "Gio Luchessi", email: "", phone: "(702) 228-6887" }
     },
     {
       id: "lambda-chi",
@@ -55,7 +55,7 @@ window.IIFC = {
       website: "https://www.lambdachi.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
-      president: { name: "", email: "", phone: "" }
+      president: { name: "Lance Zuniga", email: "", phone: "(775) 636-1638" }
     },
     {
       id: "kappa-alpha",
@@ -67,7 +67,7 @@ window.IIFC = {
       website: "https://www.ka.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
-      president: { name: "", email: "", phone: "" }
+      president: { name: "Jacob Rivers", email: "", phone: "(775) 287-2417" }
     },
     {
       id: "zeta-psi",
@@ -79,7 +79,7 @@ window.IIFC = {
       website: "https://www.zetapsi.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
-      president: { name: "", email: "", phone: "" }
+      president: { name: "Henry Lawson", email: "", phone: "(775) 546-3105" }
     },
     {
       id: "pi-kapp",
@@ -91,7 +91,7 @@ window.IIFC = {
       website: "https://www.pikapp.org",
       photo: "",
       // Shown on the Parents page. Leave blank until the chapter president agrees to list it.
-      president: { name: "", email: "", phone: "" }
+      president: { name: "Cruz Ramirez", email: "", phone: "(702) 902-7744" }
     }
   ],
 
